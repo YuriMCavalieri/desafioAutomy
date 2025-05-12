@@ -13,6 +13,7 @@ app.use(express.json());
 // Rota que o frontend irá chamar
 app.get('/api/baterias', async (req, res) => {
   const { email, verPassadas } = req.query;
+  console.log('API acionada com:', email, verPassadas);
 
   if (!email) {
     return res.status(400).json({ erro: 'Email é obrigatório.' });
